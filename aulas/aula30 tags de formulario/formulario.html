@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.sheet">
+    <title>Document</title>
+</head>
+<body> 
+<fieldset> 
+       <form action="" method="get"><!--<form> define um formulario, a area de um formulario-->
+        <label for="">Nome:</label> <!--<label> define uma legenda/nome para um item -->  
+        <input type="text"><!--cria um campo de entrada para obter informações do usario, muito usado em cadastros. varia de acordo com o "type"-->
+        <select><!--cria uma lista de seleção suspensa -->
+            <option value="Gustavo">Gustavo</option><!--<option> é o conteudo da lista suspensa -->
+            <option value="Maria">Maria</option>
+            <option value="Leandro">Leandro</option>
+            <option value="Henry Cavil" disabled >Henry Cavil</option><!--"disabled" deixa uma opção da lista não selecional-->
+            <option value="Crepúsculo" selected >Crepúsculo</option><!-- "selected" faz com que a opção em que este atributo esta nvenha pré-selecionada-->
+        </select>
+</fieldset>
+
+<fieldset><!--agrupa elementos de um formulario-->
+    <input type="text" list="opcoes">
+    <datalist id="opcoes"><!-- <datalis> cria um conjunto de elementos que representam as opções permitidas ou recomendadas disponíveis-->
+        <option value="Maçã">Maçã</option>
+        <option value="Goiaba">Goiaba</option>
+        <option value="Acerola">Acerola</option>
+        <option value="Jambo">Jambo</option>
+        <option value="Uva">Uva</option>
+    </datalist>
+
+    <input type="radio"><!--type="radio" cria um chelist-->
+    <label for="amor">amor</label>
+    <input type="radio">
+    <label for="vida">vida</label>
+    <input type="radio">
+    <label for="coisa">coisa</label>
+    <input type="radio">
+    <label for="cria">cria</label>
+    <input type="radio">
+    <label for="mandrake">mandrake</label>
+    <input type="radio">
+    <label for="liso">liso</label>
+</fieldset>
+
+<fieldset>
+    <div>
+        <input type="checkbox" id="checkbox"><!--o input type "checkbox" cria um checkbox-->
+        <label for="roupa">roupa</label>
+        <input type="checkbox" id="checkbox">
+        <label for="calçado">calçado</label>
+        <input type="checkbox" id="checkbox">
+        <label for="relogio">relogio</label>
+        <input type="checkbox" id="checkbox">
+        <label for="cabelo">cabelo</label>
+        <input type="checkbox" id="checkbox">
+        <label for="anel">anel</label>
+    </div>
+
+    <textarea name="texto" id="" cols="60" rows="10"></textarea>
+</fieldset>
+
+<fieldset>
+    <label for="cor1">escolha a cor</label>
+    <input type="color" id="cor1"><!--o input type "color" cria uma area de seleção de cores-->
+    <br>
+    <br>
+    <label for="data">selecione a data</label>
+    <input type="date" id="data"><!--o input type "date" cria uma area onde se digita uma data ou A escolhe-se no calendario-->
+    <br>
+    <br>
+    <label for="time">escolha data e hora</label>
+    <input type="datetime-local" id="time"><!--o input type "datetime-local" cria uma area onde se digita uma data e uma hora ou A escolhe-se no calendario-->
+    <br>
+    <br>
+    <label for="arquivo">selecione o arquivo</label>
+    <input type="file" value="enviar" id="arquivo"><!--o input type "file" cria um campo de seleção de arquivos -->
+</fieldset>
+
+<fieldset>
+    <label for="senha">digite sua senha</label>
+    <input type="password" id="senha"><!--o input type "password" cria um campo onde o que é escrito é censurado (muito usado em campos de inserir senhas)-->
+    <br>
+    <br>
+    <label for="email">digite seu email</label>
+    <input type="email" name="email" id="email" required><!--o input type "email" cria um campo de digitação de e-mail que detecta se oq foi escrito de fato é um email-->
+    <br>
+    <br>
+</fieldset>
+
+
+<input type="reset" value="zerar"><!--o input type "reset" reseta todo o conteudo do formulario-->
+<input type="submit" value="enviar" id="botao">
+    </form>
+
+
+
+    <!-- 
+        <FORM>
+    o atributo "action" é onde se coloca a URL do destinatario que vai processar as informações enviadas pelo formulario
+    o atributo "method" define o metodo HTTP do qual o navegador usará para enviar o formulario, os valores possiveis são:
+        get
+        post
+
+        <OPTION>
+    o atributo "value" é o valor que será enviado de acordo com cada opção, os valores devem ter relação com o item selecionado
+    
+        <DATALIST>
+    para que essas opções sejam exibidas o <input> deve ter o atributo "list" com o valor igual ao id do <datalist>
+
+        <LABEL>
+    o atributo "for" deve ter o exato mesmo valor que o "id" do <input>
+
+        <INPUT>
+    o atributo "value" num input define o seu nome
+    o atributo "required" torna um campo do formulario obrigatorio
+    
+    -->
+    
+</body>
+</html>
