@@ -47,7 +47,9 @@ Para subir a API, execute:
 ``` shell
 task run
 ```
-Acesse http://localhost:8000/api/v1/docs em seu navegador preferido para postar os dados diretamente do Swagger ou use um API consumer de sua escolha. Veja as collections disponíveis em `dev/collections/`
+Acesse http://localhost:8000/docs#/inference/post_inference_post em seu navegador preferido para postar os dados diretamente do Swagger.
+
+Ou http://localhost:8000/api/v1/inference para utilizar `Postman` ou outro API consumer de sua escolha. Veja as collections disponíveis em `dev/collections/`.
 
 ## Estrutura de Diretórios
 
