@@ -36,6 +36,7 @@ git clone git@github.com:Compass-pb-aws-2024-JUNHO/sprints-4-5-pb-aws-junho.git
 Mude para a branch grupo-3 usando: `git switch grupo-3`
 
 Crie um arquivo `.env` e insira as credenciais de `local.env` substituindo o valor das variáveis com prefixo `AWS_` por as suas.
+(Ainda que com suas próprias credenciais é necessario permissão, envie um pedido de permissão para que seja possível acessar o S3)
 
 Execute no terminal para instalar as dependências:
 ``` shell
