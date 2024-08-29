@@ -22,6 +22,32 @@ A aplicação consiste em uma API que disponibiliza um endpoint que recebe dados
 </div>
 
 ## Execução
+Primeiro, clone o repositório usando:  
+``` shell
+git clone https://github.com/Compass-pb-aws-2024-JUNHO/sprints-4-5-pb-aws-junho.git
+
+```
+Ou (se tiver ssh configurado)  
+``` shell
+git clone git@github.com:Compass-pb-aws-2024-JUNHO/sprints-4-5-pb-aws-junho.git
+
+```
+
+Mude para a branch grupo-3 usando: `git switch grupo-3`
+
+Execute no terminal para instalar as dependências:
+``` shell
+pip install -r requirements.txt
+```
+
+### API
+Para subir a API, execute:
+``` shell
+task run
+```
+Acesse http://localhost:8000/api/v1/docs em seu navegador preferido para postar os dados diretamente do Swagger ou use um API consumer de sua escolha. Veja as collections disponíveis em `dev/collections/`
+
+Crie um arquivo `.env` e insira as credenciais de `local.env` substituindo o valor das variáveis com prefixo `AWS_` por as suas.
 
 ## Estrutura de Diretórios
 
@@ -49,6 +75,8 @@ A aplicação consiste em uma API que disponibiliza um endpoint que recebe dados
 Para organizar o desenvolvimento e manter o bom andamento do projeto, foi criado um quadro no Trello com as etapas necessárias a serem seguidas.
 
 Quando surgia um problema que poderia comprometer o andamento das tarefas delegadas a cada membro da equipe, o procedimento era alocar mais membros da equipe e instruí-los a ajudar na solução do problema de forma mais eficiente.
+
+### Dificuldades
 
 ## Desenvolvedores
 | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/97261564?v=4" width=115><br><sub>Gustavo Felipe da Costa Silva</sub>](https://github.com/gusttavofelipe) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/130758430?v=4" width=115><br><sub>Hugo Bessa Susini Ribeiro</sub>](https://github.com/hsusini) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/167718668?v=4" width=115><br><sub>Jean Carlos Penha da Conceição</sub>](https://github.com/JeanPTBR) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/114765722?v=4" width=115><br><sub>Silvio Cabral de Melo Junior</sub>](https://github.com/SilvioCMJ)
