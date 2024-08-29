@@ -35,6 +35,8 @@ git clone git@github.com:Compass-pb-aws-2024-JUNHO/sprints-4-5-pb-aws-junho.git
 
 Mude para a branch grupo-3 usando: `git switch grupo-3`
 
+Crie um arquivo `.env` e insira as credenciais de `local.env` substituindo o valor das variáveis com prefixo `AWS_` por as suas.
+
 Execute no terminal para instalar as dependências:
 ``` shell
 pip install -r requirements.txt
@@ -46,8 +48,6 @@ Para subir a API, execute:
 task run
 ```
 Acesse http://localhost:8000/api/v1/docs em seu navegador preferido para postar os dados diretamente do Swagger ou use um API consumer de sua escolha. Veja as collections disponíveis em `dev/collections/`
-
-Crie um arquivo `.env` e insira as credenciais de `local.env` substituindo o valor das variáveis com prefixo `AWS_` por as suas.
 
 ## Estrutura de Diretórios
 
