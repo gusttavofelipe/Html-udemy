@@ -39,6 +39,12 @@ Crie um arquivo `.env` e insira as credenciais de `local.env` substituindo o val
 
 (Ainda que com suas próprias credenciais é necessario permissão, envie um pedido de permissão para que seja possível acessar o S3)
 
+Para o desenvolvimento local deve-se utilizar o ModelHandler localizado em `dev/ml/main.py`, faça isso substituindo o import no arquivo `app/presentation/views/inference.py`, troque o import de `app` para `dev`, conforme a instrução abaixo:
+
+    app - from app.ml.main import ModelHandler
+    dev - from dev.ml.main import ModelHandler
+
+
 Execute no terminal para instalar as dependências:
 ``` shell
 pip install -r requirements.txt
