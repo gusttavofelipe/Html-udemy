@@ -18,16 +18,16 @@ A aplicação consiste em uma API que disponibiliza um endpoint que recebe dados
  <img align="center" alt="S3" height="60" width="52" src="https://static-00.iconduck.com/assets.00/aws-s3-simple-storage-service-icon-423x512-sofvbo3x.png"></img>
  <img align="center" alt="EC2" height="63" width="55" src="https://www.svgrepo.com/show/448268/aws-ec2.svg"></img>
  <img align="center" alt="RDS" height="63" width="55" src="https://www.svgrepo.com/show/353458/aws-rds.svg"></img>
- 
+
 </div>
 
 ## Execução
-Primeiro, clone o repositório usando:  
+Primeiro, clone o repositório usando:
 ``` shell
 git clone https://github.com/Compass-pb-aws-2024-JUNHO/sprints-4-5-pb-aws-junho.git
 
 ```
-Ou (se tiver ssh configurado)  
+Ou (se tiver ssh configurado)
 ``` shell
 git clone git@github.com:Compass-pb-aws-2024-JUNHO/sprints-4-5-pb-aws-junho.git
 
@@ -35,18 +35,35 @@ git clone git@github.com:Compass-pb-aws-2024-JUNHO/sprints-4-5-pb-aws-junho.git
 
 Mude para a branch grupo-3 usando: `git switch grupo-3`
 
-Crie um arquivo `.env` e insira as credenciais de `local.env` substituindo o valor das variáveis com prefixo `AWS_` por suas próprias crendenciais.
+### Ambiente de desenvolvimento
+Para instalar e gerenciar as depências adequadamente você precisará configurar um ambiente virtual utilizando venv:
 
-Para o desenvolvimento local deve-se utilizar o ModelHandler de desenvolvimento definido em `dev/ml/main.py`, faça isso substituindo o import no arquivo `app/presentation/views/inference.py`, de `app` para `dev`, conforme a instrução abaixo:
+    Windows:
+        criação: python -m venv inference
+        ativação: .\inference\Scripts\activate.bat
 
-    app - from app.ml.main import ModelHandler
-    dev - from dev.ml.main import ModelHandler
+    Linux:
+        instalar python venv: sudo apt install python3-venv
+        criação: python -m venv inference
+        ativação: source inference/bin/activate
 
 
 Execute no terminal para instalar as dependências:
 ``` shell
 pip install -r requirements.txt
 ```
+
+Crie um arquivo `.env` e insira as credenciais de `local.env` substituindo o valor das variáveis com prefixo `AWS_` por suas próprias crendenciais.
+
+O bucket S3 foi mantido público durante o desenvolvimento da aplicação. Caso deseje ter acesso ao modelo armazendo no Bucket envie uma solicitação para inferenceprojectmodelaccess@gmail.com no seguinte esquema:
+- Assunto: Acesso ao Bucket S3
+- Corpo: Nome completo - E-mail compass corporativo
+
+Para o desenvolvimento local deve-se utilizar o ModelHandler de desenvolvimento definido em `dev/ml/main.py`, faça isso substituindo o import no arquivo `app/presentation/views/inference.py`, de `app` para `dev`, conforme a instrução abaixo:
+
+    app - from app.ml.main import ModelHandler
+    dev - from dev.ml.main import ModelHandler
+
 
 ### Sem Contêiner.
 Para subir a API, execute:
@@ -70,34 +87,27 @@ Acesse http://localhost:8000/docs#/inference/post_inference_post em seu navegado
 
 Ou acesse http://localhost:8000/api/v1/inference para utilizar `Postman` ou outro API consumer de sua escolha. Veja as collections disponíveis em `dev/collections/`.
 
-## 📂 Estrutura de Diretórios
+## Estrutura de Diretórios
 
-Abaixo está a estrutura de diretórios do projeto:
+- **`app`:** Diretório principal que contém a aplicação e os demais diretórios e arquivos vitais para a aplicação.
+    - **`application/`:** Contém arquivos de configurações gerais usadas no projeto.
+        - **`exceptions/`:** Contém todas as exeções customizadas utilizadas no projeto.
+        - **`core/`:** Contém configurações de loggin e varíaveis de ambiente.
 
-   Inference-Project/  
-   │  
-   ├── app/                      # Diretório principal que contém a aplicação e os demais diretórios e arquivos vitais para a aplicação  
-   │   ├── application/          # Contém arquivos de configurações gerais usadas no projeto  
-   │   │   ├── exceptions/       # Contém todas as exceções customizadas utilizadas no projeto  
-   │   │   └── core/             # Contém configurações de logging e variáveis de ambiente  
-   │   │  
-   │   ├── ml/                   # Contém todos os arquivos relacionados ao treinamento e execução do modelo  
-   │   │   ├── dataset/          # Contém o dataset CSV original  
-   │   │   └── notebooks/        # Contém todos os notebooks usados no treinamento e tratamento de dados para o modelo  
-   │   │  
-   │   ├── presentation/         # Contém todos os arquivos relacionados à camada de apresentação da aplicação  
-   │   │   └── views/            # Contém a view que disponibiliza o endpoint de inferência  
-   │   │  
-   │   └── schemas/              # Contém os schemas de validação de entrada e saída de dados  
-   │  
-   ├── dev/                      # Diretório usado para auxiliar os desenvolvedores durante o desenvolvimento local  
-   │   ├── ml/                   # Equivale ao diretório homônimo em `app/`, com código essencial para o desenvolvimento local  
-   │   └── tasks/                # Contém código que são executados em `pyproject.toml` usando a ferramenta `taskipy`  
-   │  
-   ├── tests/                    # Diretório contendo testes automatizados com pytest, seguindo a mesma estrutura presente em `app/`  
-   │  
-   └── README.md                 # Documentação do projeto  
+    - **`ml/`:** Contém todos os arquivos relacionados ao treinamento e execução modelo.
+        - **`dataset/`:** Contém o dataset csv original.
+        - **`notebooks/`:** Contém todos os notebooks usados no treinamento e tratamento de dados para modelo.
 
+    - **`presentation/`:** Contém todos os arquivos relacionados a camada de apresentação da aplicação.
+        - **`views/`:** Contém a view que disponibiliza o endpoint de inferência.
+
+    - **`schemas/`:** Contém os schemas de validação de entrada e saída de dados.
+
+- **`dev/`:** Diretório usado para auxiliar os desenvolvedores durante o desenvolvimento local.
+    - **`ml/`:** Equivale ao diretório homônimo em `app/`, com código essencial para o desenvolvimento local.
+    - **`tasks/`:** Contém código que são executados em `pyptoject.toml` usando a ferramenta `taskipy`.
+
+- **`tests/`:** Diretório contendo testes automatizados com pytest, seguindo a mesma estrutura presente em `app/`.
 
 ## Desenvolvimento
 Para organizar o desenvolvimento e manter o bom andamento do projeto, foi criado um quadro no Trello com as etapas necessárias a serem seguidas.
@@ -105,10 +115,6 @@ Para organizar o desenvolvimento e manter o bom andamento do projeto, foi criado
 Quando surgia um problema que poderia comprometer o andamento das tarefas delegadas a cada membro da equipe, o procedimento era alocar mais membros da equipe e instruí-los a ajudar na solução do problema de forma mais eficiente.
 
 ### Dificuldades
-- Interconexão entre serviços AWS, por motivos de permissões negadas.
-- Encontrar os melhores parâmetros para cada modelo de IA testado.
-- Mapeamento das portas na instância EC2.
-- Treinamento externo do modelo utilizando o Sagemaker SDK.
 
 ## Desenvolvedores
 | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/97261564?v=4" width=115><br><sub>Gustavo Felipe da Costa Silva</sub>](https://github.com/gusttavofelipe) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/130758430?v=4" width=115><br><sub>Hugo Bessa Susini Ribeiro</sub>](https://github.com/hsusini) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/167718668?v=4" width=115><br><sub>Jean Carlos Penha da Conceição</sub>](https://github.com/JeanPTBR) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/114765722?v=4" width=115><br><sub>Silvio Cabral de Melo Junior</sub>](https://github.com/SilvioCMJ)
