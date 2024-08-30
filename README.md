@@ -74,29 +74,29 @@ Ou acesse http://localhost:8000/api/v1/inference para utilizar `Postman` ou outr
 
 Abaixo está a estrutura de diretórios do projeto:
 
-    Inference-Project/
-    │
-    ├── app/                      # Diretório principal que contém a aplicação e os demais diretórios e arquivos vitais para a aplicação
-    │   ├── application/          # Contém arquivos de configurações gerais usadas no projeto
-    │   │   ├── exceptions/       # Contém todas as exceções customizadas utilizadas no projeto
-    │   │   └── core/             # Contém configurações de logging e variáveis de ambiente
-    │   │
-    │   ├── ml/                   # Contém todos os arquivos relacionados ao treinamento e execução do modelo
-    │   │   ├── dataset/          # Contém o dataset CSV original
-    │   │   └── notebooks/        # Contém todos os notebooks usados no treinamento e tratamento de dados para o modelo
-    │   │
-    │   ├── presentation/         # Contém todos os arquivos relacionados à camada de apresentação da aplicação
-    │   │   └── views/            # Contém a view que disponibiliza o endpoint de inferência
-    │   │
-    │   └── schemas/              # Contém os schemas de validação de entrada e saída de dados
-    │
-    ├── dev/                      # Diretório usado para auxiliar os desenvolvedores durante o desenvolvimento local
-    │   ├── ml/                   # Equivale ao diretório homônimo em `app/`, com código essencial para o desenvolvimento local
-    │   └── tasks/                # Contém código que são executados em `pyproject.toml` usando a ferramenta `taskipy`
-    │
-    ├── tests/                    # Diretório contendo testes automatizados com pytest, seguindo a mesma estrutura presente em `app/`
-    │
-    └── README.md                 # Documentação do projeto
+   Inference-Project/  
+   │  
+   ├── app/                      # Diretório principal que contém a aplicação e os demais diretórios e arquivos vitais para a aplicação  
+   │   ├── application/          # Contém arquivos de configurações gerais usadas no projeto  
+   │   │   ├── exceptions/       # Contém todas as exceções customizadas utilizadas no projeto  
+   │   │   └── core/             # Contém configurações de logging e variáveis de ambiente  
+   │   │  
+   │   ├── ml/                   # Contém todos os arquivos relacionados ao treinamento e execução do modelo  
+   │   │   ├── dataset/          # Contém o dataset CSV original  
+   │   │   └── notebooks/        # Contém todos os notebooks usados no treinamento e tratamento de dados para o modelo  
+   │   │  
+   │   ├── presentation/         # Contém todos os arquivos relacionados à camada de apresentação da aplicação  
+   │   │   └── views/            # Contém a view que disponibiliza o endpoint de inferência  
+   │   │  
+   │   └── schemas/              # Contém os schemas de validação de entrada e saída de dados  
+   │  
+   ├── dev/                      # Diretório usado para auxiliar os desenvolvedores durante o desenvolvimento local  
+   │   ├── ml/                   # Equivale ao diretório homônimo em `app/`, com código essencial para o desenvolvimento local  
+   │   └── tasks/                # Contém código que são executados em `pyproject.toml` usando a ferramenta `taskipy`  
+   │  
+   ├── tests/                    # Diretório contendo testes automatizados com pytest, seguindo a mesma estrutura presente em `app/`  
+   │  
+   └── README.md                 # Documentação do projeto  
 
 
 ## Desenvolvimento
