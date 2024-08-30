@@ -48,11 +48,24 @@ Execute no terminal para instalar as dependências:
 pip install -r requirements.txt
 ```
 
-### API
+### Sem Contêiner.
 Para subir a API, execute:
 ``` shell
 task run
 ```
+
+### Em Contêiner (Docker)
+Caso não tenha o [Docker](https://www.docker.com/) instalado, siga a documentação oficial na plataforma.
+
+Para construir a imagem da aplicação, execute:
+``` shell
+docker build -t inference/inference-service:v1 .
+```
+Para executar o contêiner:
+``` shell
+docker run -d --name inference -p 8000:8000 inference/inference-service
+```
+
 Acesse http://localhost:8000/docs#/inference/post_inference_post em seu navegador preferido para postar os dados diretamente do Swagger.
 
 Ou acesse http://localhost:8000/api/v1/inference para utilizar `Postman` ou outro API consumer de sua escolha. Veja as collections disponíveis em `dev/collections/`.
